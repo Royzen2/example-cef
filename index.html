@@ -1,0 +1,33 @@
+
+
+<body>
+    <input id="login">
+    <input id="pass">
+  
+  
+<script>
+  //example js 
+  let login = document.getElementById('login');
+  let pass = document.getElementById('pass');
+
+  /*
+    here is an example of sending from js code to pawn code
+    for a place data:player can be anything 
+  */
+  cef.emit('data:player', login.value, pass.value);
+  
+  /*
+    this does not apply here, but to subscribe to an event from the game, use cef.on, for a place of data:game You can use whatever you want
+  
+  */
+  cef.on('data:game', (parametrs) => {
+      //you can transmit no more than 10 values here , and they should go in order as you send them in the game
+      //where parametrs are, there are your values 
+      if(parametrs == 1)
+      {
+        //code
+     
+      }
+  });
+</script>
+</body>
